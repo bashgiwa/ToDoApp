@@ -1,0 +1,63 @@
+{
+  "name": "todolist",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "format": "prettier --write \"**/*.+(js|jsx|json|yml|yaml|css|md|vue)\""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "next": "^13.0.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "eslintConfig": {
+    "env": {
+      "es6": true,
+      "node": true
+    },
+    "jest": true,
+    "parserOptions": {
+      "ecmaVersion": 2020,
+      "sourceType": "module"
+    },
+    "extends": [
+      "eslint:recommended",
+      "react-app",
+      "react-app/jest",
+      "plugin:prettier/recommended"
+    ],
+    "rules": {
+      "no-console": "warn",
+      "no-eval": "error"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint && npm run format"
+    }
+  },
+  "prettier": {
+    "printWidth": 90,
+    "bracketSpacing": false,
+    "trailingComma": "es5"
+  },
+  "lint-staged": {
+    "*.+(js|jsx)": "eslint --fix",
+    "*.+(json|css|md)": "prettier --write"
+  },
+  "devDependencies": {
+    "eslint": "^8.27.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.2",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1"
+  }
+}
